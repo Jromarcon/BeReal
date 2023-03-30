@@ -39,20 +39,41 @@
                                                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mw3-5y-pwo">
-                                                                    <rect key="frame" x="27.666666666666629" y="0.0" width="365.33333333333337" height="24"/>
+                                                                    <rect key="frame" x="27.666666666666657" y="0.0" width="365.33333333333337" height="24"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
                                                         </stackView>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6yh-d7-D5S">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R8i-vu-89d">
                                                             <rect key="frame" x="0.0" y="32" width="393" height="393"/>
-                                                            <color key="backgroundColor" systemColor="quaternaryLabelColor"/>
+                                                            <subviews>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="55e-0K-5GF">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="393" height="393"/>
+                                                                </imageView>
+                                                                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uDy-ja-G2a">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="393" height="393"/>
+                                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="NUt-JL-ztn">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="393" height="393"/>
+                                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                    </view>
+                                                                    <blurEffect style="regular"/>
+                                                                </visualEffectView>
+                                                            </subviews>
+                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" secondItem="6yh-d7-D5S" secondAttribute="height" multiplier="1:1" id="NFw-jE-2mP"/>
+                                                                <constraint firstItem="55e-0K-5GF" firstAttribute="top" secondItem="R8i-vu-89d" secondAttribute="top" id="2qE-vg-Ldr"/>
+                                                                <constraint firstAttribute="trailing" secondItem="uDy-ja-G2a" secondAttribute="trailing" id="70b-Xk-cew"/>
+                                                                <constraint firstAttribute="width" secondItem="R8i-vu-89d" secondAttribute="height" multiplier="1:1" id="R9x-wS-kSl"/>
+                                                                <constraint firstAttribute="bottom" secondItem="55e-0K-5GF" secondAttribute="bottom" id="SxI-f8-P93"/>
+                                                                <constraint firstItem="uDy-ja-G2a" firstAttribute="leading" secondItem="R8i-vu-89d" secondAttribute="leading" id="Szi-9Z-41U"/>
+                                                                <constraint firstAttribute="bottom" secondItem="uDy-ja-G2a" secondAttribute="bottom" id="XXB-1T-kJc"/>
+                                                                <constraint firstItem="uDy-ja-G2a" firstAttribute="top" secondItem="R8i-vu-89d" secondAttribute="top" id="ecS-hm-COB"/>
+                                                                <constraint firstAttribute="trailing" secondItem="55e-0K-5GF" secondAttribute="trailing" id="hE6-05-oIR"/>
+                                                                <constraint firstItem="55e-0K-5GF" firstAttribute="leading" secondItem="R8i-vu-89d" secondAttribute="leading" id="k4R-BY-HR2"/>
                                                             </constraints>
-                                                        </imageView>
+                                                        </view>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="3mh-SE-xuG">
                                                             <rect key="frame" x="0.0" y="433" width="393" height="72"/>
                                                             <subviews>
@@ -82,9 +103,10 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" systemColor="labelColor"/>
                                         <connections>
+                                            <outlet property="blurView" destination="uDy-ja-G2a" id="5tG-Ik-DeQ"/>
                                             <outlet property="captionLabel" destination="ng0-5u-Bfh" id="3yO-LR-aCH"/>
                                             <outlet property="dateLabel" destination="QVo-eD-lCz" id="2FD-ka-Uvt"/>
-                                            <outlet property="postImageView" destination="6yh-d7-D5S" id="9ov-h2-WWu"/>
+                                            <outlet property="postImageView" destination="55e-0K-5GF" id="Dio-3B-164"/>
                                             <outlet property="usernameLabel" destination="mw3-5y-pwo" id="BOs-aV-UJx"/>
                                         </connections>
                                     </tableViewCell>
@@ -102,11 +124,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="BeReal" id="2lh-lD-W9h">
                         <barButtonItem key="leftBarButtonItem" title="Log Out" id="hcb-au-2TV">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="onLogOutTapped:" destination="bwH-Mr-ucc" id="avz-fK-tz4"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="plus.app" catalog="system" id="Ciw-ju-gor">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="ywH-xe-7l4" kind="show" id="EFS-wb-RkB"/>
                             </connections>
@@ -175,6 +199,12 @@
                                 <color key="tintColor" systemColor="systemBackgroundColor"/>
                                 <connections>
                                     <action selector="onPickedImageTapped:" destination="ywH-xe-7l4" id="jNj-ch-xal"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="camera" catalog="system" id="STL-je-iFr">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="onTakePhotoTapped:" destination="ywH-xe-7l4" id="QUb-GR-bMf"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
@@ -402,6 +432,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="camera" catalog="system" width="128" height="93"/>
         <image name="person.circle.fill" catalog="system" width="128" height="123"/>
         <image name="photo" catalog="system" width="128" height="93"/>
         <image name="photo.artframe" catalog="system" width="128" height="93"/>
@@ -411,9 +442,6 @@
         </systemColor>
         <systemColor name="placeholderTextColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="quaternaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.17647058823529413" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>

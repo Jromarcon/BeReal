@@ -1,4 +1,4 @@
-# Project 5 - *BeReal*
+# Project 6 - *BeReal*
 
 Submitted by: **Jose Marcon**
 
@@ -10,24 +10,25 @@ Time spent: **8** hours spent in total
 
 The following **required** functionality is completed:
 
-- [x] User can register a new account
-- [x] User can log in with newly created account
-- [x] App has a feed of posts when user logs in
-- [x] User can upload a new post which takes in a picture from photo library and a caption    
+- [x] User can launch camera to take photo instead of photo library
+- [x] User session persists when application is closed and relaunched
+- [x] Users are able to log out and return to sign in page
+- [x] Users are NOT able to see other photos until they upload their own    
  
 The following **optional** features are implemented:
 
-- [ ] Users can pull to refresh their feed and see a loading indicator
-- [x] Users can infinite-scroll in their feed to see past the 10 most recent photos
-- [x] Users can see location and time of photo upload in the feed    
-- [x] User is able to logout
-- [x] User stays logged in when app is closed and open again    
+- [ ] User receive notifcation when it is time to post
+- [ ] Users can make comments and view comments in posts    
+
+The following **additional** features are implemented:
+
+- [ ] List anything else that you can get done to improve the app functionality!    
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<blockquote class="imgur-embed-pub" lang="en" data-id="xcZG97S"><a href="https://imgur.com/xcZG97S">BeReal</a></blockquote>
+<blockquote class="imgur-embed-pub" lang="en" data-id="DbwvY7C"><a href="https://imgur.com/DbwvY7C">BeReal Pt. 2</a></blockquote>
 
 GIF created with [Kap](https://getkap.co/) for macOS
 
