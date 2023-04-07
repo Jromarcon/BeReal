@@ -30,6 +30,8 @@ Here's a walkthrough of implemented user stories:
 
 <blockquote class="imgur-embed-pub" lang="en" data-id="DbwvY7C"><a href="https://imgur.com/DbwvY7C">BeReal Pt. 2</a></blockquote>
 
+<blockquote class="imgur-embed-pub" lang="en" data-id="dtxwteB"><a href="https://imgur.com/dtxwteB">Resubmit</a></blockquote>
+
 GIF created with [Kap](https://getkap.co/) for macOS
 
 
